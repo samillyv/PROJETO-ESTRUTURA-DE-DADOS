@@ -10,6 +10,7 @@ struct Planeta {
     int ordemSolar;
     float x;
     float y;
+    float gravidade;
     string tipo;
     float sobrevivencia;
 };
