@@ -3,30 +3,48 @@
 
 #include <iostream>
 #include <string>
+
 using namespace std;
 
-struct Planeta {
+struct Planeta
+{
     string nome;
     int ordemSolar;
     float x;
     float y;
+    float z;
     float gravidade;
     string tipo;
     float sobrevivencia;
 };
 
-struct No {
+struct NoPlaneta
+{
     Planeta planeta;
-    No* esquerda;
-    No* direita;
+    NoPlaneta* esquerda;
+    NoPlaneta* direita;
 };
 
-No* criarNo( Planeta p);
+extern NoPlaneta* raizPlanetas;
 
-No* inserirPlaneta(No* raiz, Planeta p);
+NoPlaneta* criarNo(Planeta p);
 
-void mostrarPlanetas(No* raiz);
+NoPlaneta* inserirPlaneta(
+    NoPlaneta* raiz,
+    Planeta p
+);
 
-No* buscarPlaneta(No* raiz, string nome);
+void mostrarPlanetas(
+    NoPlaneta* raiz
+);
+
+NoPlaneta* buscarPlaneta(
+    NoPlaneta* raiz,
+    string nome
+);
+
+void menuPlanetas();
+
+void carregarPlanetas();
 
 #endif

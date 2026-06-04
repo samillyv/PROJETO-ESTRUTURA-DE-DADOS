@@ -9,6 +9,7 @@ int main()
     Pilha pilhaEventos;
 
     iniciar(pilhaEventos);
+    carregarPlanetas();
 
     int opcao;
 

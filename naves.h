@@ -10,7 +10,7 @@ using namespace std;
 struct Nave {
     string nome;
     int capacidade;
-    float velocidade;
+    float velocidade; // km/
 };
 
 // Dados da viagem

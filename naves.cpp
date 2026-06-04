@@ -8,7 +8,8 @@ using namespace std;
 queue<Viagem> filaViagens;
 
 // Adicionar viagem
-void adicionarViagem() {
+void adicionarViagem()
+{
 
     Viagem v;
 
@@ -18,14 +19,16 @@ void adicionarViagem() {
     cin >> v.nave.nome;
 
     cout << "Capacidade: ";
-    while (!(cin >> v.nave.capacidade)) {
+    while (!(cin >> v.nave.capacidade))
+    {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Digite um numero inteiro valido: ";
     }
 
-    cout << "Velocidade (km/s): ";
-    while (!(cin >> v.nave.velocidade)) {
+    cout << "Velocidade (km/h): ";
+    while (!(cin >> v.nave.velocidade))
+    {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Digite um numero valido: ";
@@ -38,7 +41,8 @@ void adicionarViagem() {
     cin >> v.destino;
 
     cout << "Distancia (km): ";
-    while (!(cin >> v.distancia)) {
+    while (!(cin >> v.distancia))
+    {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Digite um numero valido: ";
@@ -76,14 +80,16 @@ void processarViagem()
          << v.destino
          << endl;
 
+    int horas = (int)tempo;
+    int minutos = (tempo - horas) * 60;
+
     cout << "Tempo estimado: "
-         << tempo
-         << " segundos\n";
+         << horas
+         << " horas e " << minutos << " minutos\n";
 
     // INTEGRACAO COM HISTORICO
     registrarViagemHistorico(
-        v.destino
-    );
+        v.destino);
 
     filaViagens.pop();
 
@@ -91,9 +97,11 @@ void processarViagem()
 }
 
 // Mostrar fila completa
-void mostrarFila() {
+void mostrarFila()
+{
 
-    if (filaViagens.empty()) {
+    if (filaViagens.empty())
+    {
         cout << "\nFila vazia!\n";
         return;
     }
@@ -104,7 +112,8 @@ void mostrarFila() {
 
     cout << "\nFila de viagens\n";
 
-    while (!copia.empty()) {
+    while (!copia.empty())
+    {
 
         Viagem v = copia.front();
 
@@ -119,9 +128,11 @@ void mostrarFila() {
 }
 
 // Mostrar primeira viagem
-void mostrarPrimeiraViagem() {
+void mostrarPrimeiraViagem()
+{
 
-    if (filaViagens.empty()) {
+    if (filaViagens.empty())
+    {
         cout << "\nFila vazia!\n";
         return;
     }
@@ -135,11 +146,13 @@ void mostrarPrimeiraViagem() {
     cout << "Destino: " << v.destino << endl;
 }
 
-void menuNaves() {
+void menuNaves()
+{
 
     int opcao;
 
-    do {
+    do
+    {
 
         cout << "\n=== GERENCIAMENTO DE NAVES ===\n";
 
@@ -152,31 +165,32 @@ void menuNaves() {
         cout << "\n\nOpcao: ";
         cin >> opcao;
 
-        switch(opcao) {
+        switch (opcao)
+        {
 
-            case 1:
-                adicionarViagem();
-                break;
+        case 1:
+            adicionarViagem();
+            break;
 
-            case 2:
-                processarViagem();
-                break;
+        case 2:
+            processarViagem();
+            break;
 
-            case 3:
-                mostrarFila();
-                break;
+        case 3:
+            mostrarFila();
+            break;
 
-            case 4:
-                mostrarPrimeiraViagem();
-                break;
+        case 4:
+            mostrarPrimeiraViagem();
+            break;
 
-            case 0:
-                cout << "\nRetornando...\n";
-                break;
+        case 0:
+            cout << "\nRetornando...\n";
+            break;
 
-            default:
-                cout << "\nOpcao invalida!\n";
+        default:
+            cout << "\nOpcao invalida!\n";
         }
 
-    } while(opcao != 0);
+    } while (opcao != 0);
 }
