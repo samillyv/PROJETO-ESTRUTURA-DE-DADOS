@@ -243,14 +243,14 @@ void menuPlanetas()
 
 void carregarPlanetas()
 {
-Planeta p1 = {"Mercurio", 1, 39, 15, 8, 3.7, "Terrestre", 0.2};
-Planeta p2 = {"Venus", 2, 72, 30, 12, 8.87, "Terrestre", 0.3};
-Planeta p3 = {"Terra", 3, 100, 45, 20, 9.81, "Terrestre", 1.0};
-Planeta p4 = {"Marte", 4, 152, 60, 35, 3.71, "Terrestre", 0.5};
-Planeta p5 = {"Jupiter", 5, 520, 120, 70, 24.79, "Gasoso", 0.1};
-Planeta p6 = {"Saturno", 6, 958, 200, 120, 10.44, "Gasoso", 0.05};
-Planeta p7 = {"Urano", 7, 1920, 350, 180, 8.69, "Gasoso", 0.02};
-Planeta p8 = {"Netuno", 8, 3005, 500, 250, 11.15, "Gasoso", 0.01};
+Planeta p1 = {"Mercurio", 1, 39, 15, 8, 3.7, "Terrestre", -65};
+Planeta p2 = {"Venus", 2, 72, 30, 12, 8.87, "Terrestre", -80};
+Planeta p3 = {"Terra", 3, 100, 45, 20, 9.81, "Terrestre", 99};
+Planeta p4 = {"Marte", 4, 152, 60, 35, 3.71, "Terrestre", 35};
+Planeta p5 = {"Jupiter", 5, 520, 120, 70, 24.79, "Gasoso",-95};
+Planeta p6 = {"Saturno", 6, 958, 200, 120, 10.44, "Gasoso",-97};
+Planeta p7 = {"Urano", 7, 1920, 350, 180, 8.69, "Gasoso", -98};
+Planeta p8 = {"Netuno", 8, 3005, 500, 250, 11.15, "Gasoso", -99};
 
 
     raizPlanetas = inserirPlaneta(raizPlanetas, p1);
