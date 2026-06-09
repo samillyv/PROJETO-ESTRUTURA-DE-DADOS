@@ -117,6 +117,17 @@ void menuPlanetas()
                 cout << "\nNome: ";
                 cin >> p.nome;
 
+                NoPlaneta* existente =
+                    buscarPlaneta(
+                        raizPlanetas,
+                        p.nome
+                    );
+
+                    if(existente != NULL) {
+                        cout << "\nJa existe um planeta com esse nome, verifique em 'buscar planeta'.\n";
+                        break;
+                    }
+
                 cout << "Ordem Solar: ";
                 cin >> p.ordemSolar;
 
@@ -232,7 +243,7 @@ void menuPlanetas()
 
 void carregarPlanetas()
 {
-    Planeta p1 = {"Mercurio", 1, 39, 15, 8, 3.7, "Terrestre", 0.2};
+Planeta p1 = {"Mercurio", 1, 39, 15, 8, 3.7, "Terrestre", 0.2};
 Planeta p2 = {"Venus", 2, 72, 30, 12, 8.87, "Terrestre", 0.3};
 Planeta p3 = {"Terra", 3, 100, 45, 20, 9.81, "Terrestre", 1.0};
 Planeta p4 = {"Marte", 4, 152, 60, 35, 3.71, "Terrestre", 0.5};
